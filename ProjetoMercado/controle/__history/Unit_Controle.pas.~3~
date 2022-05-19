@@ -1,0 +1,29 @@
+unit Unit_Controle;
+
+interface
+
+type
+  TControle = class
+  private
+  public
+    function SalvarFornecedor: Boolean;
+  end;
+
+implementation
+
+uses Objeto_Fornecedor, Unit_CadFornecedor;
+
+function TControle.SalvarFornecedor: Boolean;
+var
+  CadFornecedor: TCadFornecedor;
+begin
+  CadFornecedor := TCadFornecedor.Create;
+  CadFornecedor.setNome(frm_CadFornecedor.edNome.Text);
+  CadFornecedor.setCnpj(frm_CadFornecedor.edCnpj.Text);
+
+  CadFornecedor.insertDados;
+  result := true;
+
+end;
+
+end.
