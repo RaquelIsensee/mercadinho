@@ -3,7 +3,7 @@ unit Objeto_Fornecedor;
 interface
 
 uses
-  FireDAC.Comp.Client, System.SysUtils, vcl.dialogs;
+  FireDAC.Comp.Client, System.SysUtils, vcl.dialogs, Unit_Dados;
 
 type
   TCadFornecedor = class
@@ -31,9 +31,9 @@ var
   qr: TFDQuery;
 begin
   qr := TFDQuery.Create(nil);
-  // qr.Connection := ;
+  qr.Connection := DataModule1.FDConnection1;
 
-  qr.SQL.Add('insert into fornecedor values (0, :nome, :cnpj');
+  qr.SQL.Add('insert into fornecedor values (0, :nome, :cnpj)');
 
   qr.Params[0].AsString := self.getNome;
   qr.Params[1].AsString := self.getCnpj;

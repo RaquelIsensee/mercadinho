@@ -12,6 +12,7 @@ object DataModule1: TDataModule1
       'Server=localhost'
       'DriverID=MySQL')
     LoginPrompt = False
+    Transaction = FDTransaction1
     Left = 88
     Top = 88
   end

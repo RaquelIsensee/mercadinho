@@ -60,6 +60,7 @@ object frm_CadFornecedor: Tfrm_CadFornecedor
       Width = 65
       Height = 22
       Caption = 'Sair'
+      OnClick = SairClick
     end
   end
 end

@@ -17,15 +17,15 @@ type
   private
     { Private declarations }
   public
-    Controle : TControle
-  end;
+    Controle: TControle end;
 
-var
-  Form1: TForm1;
+  var
+    Form1: TForm1;
 
 implementation
 
 {$R *.dfm}
+
 uses Unit_Dados, Unit_CadFornecedor;
 
 procedure TForm1.Cadastr1Click(Sender: TObject);
