@@ -1,0 +1,64 @@
+object Tfrm_CadProdutos: TTfrm_CadProdutos
+  Left = 0
+  Top = 0
+  Caption = 'Cadastro de Produto'
+  ClientHeight = 299
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object btnSair: TSpeedButton
+    Left = 304
+    Top = 24
+    Width = 57
+    Height = 22
+    Caption = 'Sair'
+  end
+  object btnEnviar: TSpeedButton
+    Left = 173
+    Top = 48
+    Width = 55
+    Height = 22
+    Caption = 'Enviar'
+  end
+  object Panel2: TPanel
+    Left = -22
+    Top = -25
+    Width = 631
+    Height = 122
+    TabOrder = 3
+  end
+  object Panel1: TPanel
+    Left = 24
+    Top = 181
+    Width = 625
+    Height = 185
+    TabOrder = 2
+  end
+  object Nome: TLabeledEdit
+    Left = 46
+    Top = 154
+    Width = 121
+    Height = 21
+    EditLabel.Width = 31
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Nome:'
+    TabOrder = 0
+  end
+  object Quantidade: TLabeledEdit
+    Left = 46
+    Top = 208
+    Width = 121
+    Height = 21
+    EditLabel.Width = 60
+    EditLabel.Height = 13
+    EditLabel.Caption = 'Quantidade:'
+    TabOrder = 1
+  end
+end

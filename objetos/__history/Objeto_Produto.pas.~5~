@@ -1,0 +1,87 @@
+unit Objeto_Produto;
+
+interface
+
+uses
+  FireDAC.Comp.Client, System.SysUtils, vcl.dialogs, Unit_Dados, Objeto_Fornecedor;
+
+type
+  TCadProduto = class
+  private
+    id: integer;
+    nome: string;
+    quantidade: string;
+    preco: double;
+    fornecedor: TCadFornecedor;
+
+  public
+    function getId: integer;
+    procedure setId(id: integer);
+    function getNome: string;
+    procedure setNome(nome: string);
+    function getQuantidade: string;
+    procedure setQuantidade(quantidade: string);
+
+    function insertDados: boolean;
+  end;
+
+implementation
+
+function TCadProduto.insertDados: boolean;
+var
+  qr: TFDQuery;
+begin
+  qr := TFDQuery.Create(nil);
+  qr.Connection := DataModule1.FDConnection1;
+
+  qr.SQL.Add('insert into produto values (0, :nome, :quantidade, :preco, :fornecedor)');
+
+  qr.Params[0].AsString := self.getNome;
+  qr.Params[1].AsString := self.getQuantidade;
+
+  try
+    qr.ExecSQL;
+    result := true;
+  except
+    on e: exception do
+    begin
+      result := false;
+      showMessage('Erro de inserção: ' + e.ToString);
+    end;
+  end;
+
+  qr.Close;
+  qr.Free;
+end;
+
+function TCadProduto.getId: integer;
+begin
+  result := self.id;
+end;
+
+procedure TCadProduto.setId(id: integer);
+begin
+  self.id := id;
+end;
+
+function TCadProduto.getNome: string;
+begin
+  result := self.nome;
+end;
+
+procedure TCadProduto.setNome(nome: string);
+begin
+  self.nome := nome;
+end;
+
+procedure TCadProduto.setQuantidade(quantidade: string);
+begin
+  self.quantidade := quantidade;
+end;
+
+function TCadProduto.getQuantidade: string;
+begin
+  result := self.quantidade;
+end;
+
+end.

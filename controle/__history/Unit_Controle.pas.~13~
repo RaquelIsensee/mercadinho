@@ -1,0 +1,63 @@
+unit Unit_Controle;
+
+interface
+
+uses System.sysutils;
+
+type
+  TControle = class
+  private
+  public
+    function SalvarFornecedor: Boolean;
+    function SalvarProduto: Boolean;
+    procedure getFornecedor;
+    procedure getProduto;
+  end;
+
+implementation
+
+uses Objeto_Fornecedor, Unit_CadFornecedor, Objeto_Produto, Unit_CadProdutos;
+
+function TControle.SalvarFornecedor: Boolean;
+var
+  CadFornecedor: TCadFornecedor;
+begin
+  CadFornecedor := TCadFornecedor.Create;
+  CadFornecedor.setNome(frm_CadFornecedor.edNome.Text);
+  CadFornecedor.setCnpj(frm_CadFornecedor.edCnpj.Text);
+
+  CadFornecedor.insertDados;
+  result := true;
+end;
+
+function TControle.SalvarProduto: Boolean;
+var
+  CadProduto: TCadProduto;
+begin
+  CadProduto := TCadProduto.Create;
+  CadProduto.setNome(frm_CadProdutos.Nome.Text);
+  CadProduto.setQuantidade(frm_CadProdutos.Quantidade.Text);
+
+  CadProduto.insertDados;
+  result := true;
+end;
+
+procedure TControle.getFornecedor;
+begin
+  if (frm_CadFornecedor = nil) then
+    frm_CadFornecedor := Tfrm_CadFornecedor.Create(nil);
+
+  frm_CadFornecedor.ShowModal;
+  FreeAndNil(frm_CadFornecedor);
+end;
+
+procedure TControle.getProduto;
+begin
+  if (Tfrm_CadProdutos = nil) then
+    Tfrm_CadProdutos := Tfrm_CadProdutos.Create(nil);
+
+  frm_CadFornecedor.ShowModal;
+  FreeAndNil(frm_CadFornecedor);
+end;
+
+end.
