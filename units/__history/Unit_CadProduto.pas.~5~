@@ -1,0 +1,80 @@
+unit Unit_CadProduto;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Buttons, Vcl.StdCtrls, Vcl.ExtCtrls,
+  prMercadinho;
+
+type
+  Tfrm_CadProduto = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    btnEnviar: TSpeedButton;
+    btnSair: TSpeedButton;
+    Nome: TLabeledEdit;
+    Quantidade: TLabeledEdit;
+    procedure btnSairClick(Sender: TObject);
+    procedure btnEnviarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    function validarCampos: boolean;
+    procedure limparTela;
+  end;
+
+var
+   frm_CadProduto: Tfrm_CadProduto;
+
+implementation
+
+uses Unit_Controle;
+
+procedure Tfrm_CadProduto.limparTela;
+begin
+  Nome.Clear;
+  Quantidade.Clear;
+end;
+
+procedure frm_CadProduto.btnSairClick(Sender: TObject);
+begin
+  ModalResult := mrCancel;
+end;
+
+function frm_CadProduto.validarCampos: boolean;
+begin
+  result := true;
+
+  if (Nome.Text = '') then
+  begin
+    result := false;
+    ShowMessage('Entre com o nome!');
+    Nome.SetFocus;
+    exit;
+  end;
+
+  if (Quantidade.Text = '') then
+  begin
+    result := false;
+    ShowMessage('Entre com a quantidade!');
+    Quantidade.SetFocus;
+    exit;
+  end;
+end;
+
+{$R *.dfm}
+
+procedure frm_CadProduto.btnEnviarClick(Sender: TObject);
+begin
+  if (not self.validarCampos) then
+    exit;
+
+  if (Form1.Controle.SalvarProduto()) then
+    ShowMessage('Produto Cadastrado');
+  self.limparTela();;
+  exit
+end;
+
+end.

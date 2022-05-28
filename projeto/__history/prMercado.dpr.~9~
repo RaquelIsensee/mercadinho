@@ -1,0 +1,26 @@
+program prMercado;
+
+uses
+  Vcl.Forms,
+  prMercadinho in '..\units\prMercadinho.pas' {Form1},
+  Unit_Dados in '..\dados\Unit_Dados.pas' {DataModule1: TDataModule},
+  Objeto_Fornecedor in '..\objetos\Objeto_Fornecedor.pas',
+  Unit_CadFornecedor in '..\fontes\Unit_CadFornecedor.pas' {frm_CadFornecedor},
+  Unit_Controle in '..\controle\Unit_Controle.pas',
+  Unit_CadProduto in '..\units\Unit_CadProduto.pas',
+  Unit2 in '..\Unit2.pas' {Form2},
+  Unit3 in '..\units\Unit3.pas' {Form3},
+  Objeto_Produto in '..\objetos\Objeto_Produto.pas';
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TDataModule1, DataModule1);
+  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TForm3, Form3);
+  Application.Run;
+
+end.
