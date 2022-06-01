@@ -1,0 +1,18 @@
+unit Objeto_Genero;
+
+interface
+type
+  TCadGenero = class
+  private
+    id: integer;
+    nome: string;
+  public
+    function getId: integer;
+    procedure setId(id: integer);
+    function getNome: String;
+    procedure setNome(nome: String);
+  end;
+
+implementation
+
+end.
