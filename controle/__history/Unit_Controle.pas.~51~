@@ -14,7 +14,6 @@ type
     function selectFornecedor: TList;
     procedure getFornecedor;
     procedure getProduto;
-    procedure getGenero;
   end;
 
 implementation
@@ -77,15 +76,6 @@ begin
 
   frm_CadFornecedor.ShowModal;
   FreeAndNil(frm_CadFornecedor);
-end;
-
-procedure TControle.getGenero;
-begin
-  if(frm_CadGenero = nil) then
-    frm_CadGenero := Tfrm_CadGenero.Create(nil);
-
-  frm_CadGenero.ShowModal;
-  FreeAndNil(frm_CadGenero);
 end;
 
 procedure TControle.getProduto;

@@ -10,16 +10,14 @@ type
   public
     function SalvarFornecedor: Boolean;
     function SalvarProduto: Boolean;
-    function SalvarGenero: Boolean;
     function selectFornecedor: TList;
     procedure getFornecedor;
     procedure getProduto;
-    procedure getGenero;
   end;
 
 implementation
 
-uses Objeto_Fornecedor, Unit_CadFornecedor, Objeto_Produto, Unit_CadProdutos, Objeto_Genero, Unit_CadGenero;
+uses Objeto_Fornecedor, Unit_CadFornecedor, Objeto_Produto, Unit_CadProdutos;
 
 function TControle.SalvarFornecedor: Boolean;
 var
@@ -33,26 +31,17 @@ begin
   result := true;
 end;
 
-function TControle.SalvarGenero: Boolean;
-var
-  CadGenero: TCadGenero;
-begin
-  CadGenero:= TCadGenero.Create;
-  CadGenero.setNome(frm_CadGenero.edGenero.Text);
-
-  CadGenero.insertDados;
-  result:= true;
-end;
-
 function TControle.SalvarProduto: Boolean;
 var
   CadProduto: TCadProduto;
+  CadFornecedor: TCadFornecedor;
 begin
   CadProduto := TCadProduto.Create;
+  CadFornecedor := TCadFornecedor.Create;
   CadProduto.setNome(frm_CadProdutos.edNome.Text);
   CadProduto.setQuantidade(frm_CadProdutos.edQuantidade.Text);
   CadProduto.setPreco(StrToFloat(frm_CadProdutos.edPreco.Text));
-  CadProduto.setFornecedor(TCadFornecedor(
+  CadProduto.setFornecedor(CadFornecedor(
     frm_CadProdutos.ComboFornecedor.Items.Objects[frm_CadProdutos.ComboFornecedor.ItemIndex]));
 
   CadProduto.insertDados;
@@ -77,15 +66,6 @@ begin
 
   frm_CadFornecedor.ShowModal;
   FreeAndNil(frm_CadFornecedor);
-end;
-
-procedure TControle.getGenero;
-begin
-  if(frm_CadGenero = nil) then
-    frm_CadGenero := Tfrm_CadGenero.Create(nil);
-
-  frm_CadGenero.ShowModal;
-  FreeAndNil(frm_CadGenero);
 end;
 
 procedure TControle.getProduto;
