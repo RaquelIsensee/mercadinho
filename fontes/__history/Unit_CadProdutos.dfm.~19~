@@ -39,7 +39,7 @@ object frm_CadProdutos: Tfrm_CadProdutos
   end
   object Panel2: TPanel
     Left = 0
-    Top = 103
+    Top = 97
     Width = 657
     Height = 280
     TabOrder = 1
@@ -50,7 +50,7 @@ object frm_CadProdutos: Tfrm_CadProdutos
       Height = 13
       Caption = 'Fornecedor'
     end
-    object edQuantidade: TLabeledEdit
+    object Quantidade: TLabeledEdit
       Left = 64
       Top = 72
       Width = 121
@@ -60,7 +60,7 @@ object frm_CadProdutos: Tfrm_CadProdutos
       EditLabel.Caption = 'Quantidade'
       TabOrder = 0
     end
-    object edPreco: TLabeledEdit
+    object Preco: TLabeledEdit
       Left = 64
       Top = 120
       Width = 121
@@ -78,11 +78,11 @@ object frm_CadProdutos: Tfrm_CadProdutos
       Style = csDropDownList
       TabOrder = 2
     end
-    object edNome: TLabeledEdit
+    object Nome: TLabeledEdit
       Left = 64
-      Top = 16
+      Top = 24
       Width = 121
-      Height = 25
+      Height = 21
       EditLabel.Width = 27
       EditLabel.Height = 13
       EditLabel.Caption = 'Nome'

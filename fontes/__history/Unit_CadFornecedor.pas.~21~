@@ -16,6 +16,9 @@ type
     Panel1: TPanel;
     Enviar: TSpeedButton;
     Sair: TSpeedButton;
+    Panel3: TPanel;
+    LabeledEdit1: TLabeledEdit;
+    LabeledEdit2: TLabeledEdit;
     procedure EnviarClick(Sender: TObject);
     procedure SairClick(Sender: TObject);
   private

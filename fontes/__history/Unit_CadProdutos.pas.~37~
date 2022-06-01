@@ -54,7 +54,7 @@ begin
   lista_fornecedor:= Form1.Controle.selectFornecedor;
  for I := 0 to lista_fornecedor.Count - 1  do
   begin
-    ComboFornecedor.AddItem(TCadFornecedor(lista_fornecedor[I]).getNome, TCadFornecedor(lista_fornecedor[I]));
+  ComboFornecedor.AddItem(TCadFornecedor(lista_fornecedor[I]).getNome, TCadFornecedor(lista_fornecedor[I]));
   end;
 end;
 
@@ -62,8 +62,7 @@ procedure Tfrm_CadProdutos.limparTela;
 begin
   edNome.Clear;
   edQuantidade.Clear;
-  edPreco.Clear;
-  ComboFornecedor.ItemIndex := -1;
+  edPreco.Clear
 end;
 
 
@@ -76,38 +75,21 @@ function Tfrm_CadProdutos.validarCampos: boolean;
 begin
   result := true;
 
-  if (edNome.Text = '') then
+  if (Nome.Text = '') then
   begin
     result := false;
     ShowMessage('Entre com o nome!');
-    edNome.SetFocus;
+    Nome.SetFocus;
     exit;
   end;
 
-  if (edQuantidade.Text = '') then
+  if (Quantidade.Text = '') then
   begin
     result := false;
     ShowMessage('Entre com a quantidade!');
-    edQuantidade.SetFocus;
+    Quantidade.SetFocus;
     exit;
   end;
-
-  if (edPreco.Text = '') then
-  begin
-    result := false;
-    ShowMessage('Entre com o preço!');
-    edPreco.SetFocus;
-    exit;
-  end;
-
-  if (ComboFornecedor.ItemIndex = -1) then
-  begin
-    ShowMessage('Entre com o fornecedor!');
-    edPreco.SetFocus;
-    exit;
-  end;
-
-
 end;
 
 {$R *.dfm}

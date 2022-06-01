@@ -54,7 +54,7 @@ begin
   lista_fornecedor:= Form1.Controle.selectFornecedor;
  for I := 0 to lista_fornecedor.Count - 1  do
   begin
-    ComboFornecedor.AddItem(TCadFornecedor(lista_fornecedor[I]).getNome, TCadFornecedor(lista_fornecedor[I]));
+  ComboFornecedor.AddItem(TCadFornecedor(lista_fornecedor[I]).getNome, TCadFornecedor(lista_fornecedor[I]));
   end;
 end;
 
@@ -62,8 +62,7 @@ procedure Tfrm_CadProdutos.limparTela;
 begin
   edNome.Clear;
   edQuantidade.Clear;
-  edPreco.Clear;
-  ComboFornecedor.ItemIndex := -1;
+  edPreco.Clear
 end;
 
 
@@ -99,14 +98,6 @@ begin
     edPreco.SetFocus;
     exit;
   end;
-
-  if (ComboFornecedor.ItemIndex = -1) then
-  begin
-    ShowMessage('Entre com o fornecedor!');
-    edPreco.SetFocus;
-    exit;
-  end;
-
 
 end;
 

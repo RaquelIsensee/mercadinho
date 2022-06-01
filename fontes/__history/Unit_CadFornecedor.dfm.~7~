@@ -39,6 +39,33 @@ object frm_CadFornecedor: Tfrm_CadFornecedor
       EditLabel.Caption = 'CNPJ'
       TabOrder = 1
     end
+    object Panel3: TPanel
+      Left = 0
+      Top = 0
+      Width = 641
+      Height = 242
+      TabOrder = 2
+      object LabeledEdit1: TLabeledEdit
+        Left = 32
+        Top = 32
+        Width = 161
+        Height = 21
+        EditLabel.Width = 27
+        EditLabel.Height = 13
+        EditLabel.Caption = 'Nome'
+        TabOrder = 0
+      end
+      object LabeledEdit2: TLabeledEdit
+        Left = 32
+        Top = 104
+        Width = 161
+        Height = 21
+        EditLabel.Width = 25
+        EditLabel.Height = 13
+        EditLabel.Caption = 'CNPJ'
+        TabOrder = 1
+      end
+    end
   end
   object Panel1: TPanel
     Left = 0

@@ -54,7 +54,7 @@ begin
   lista_fornecedor:= Form1.Controle.selectFornecedor;
  for I := 0 to lista_fornecedor.Count - 1  do
   begin
-    ComboFornecedor.AddItem(TCadFornecedor(lista_fornecedor[I]).getNome, TCadFornecedor(lista_fornecedor[I]));
+  ComboFornecedor.AddItem(TCadFornecedor(lista_fornecedor[I]).getNome, TCadFornecedor(lista_fornecedor[I]));
   end;
 end;
 

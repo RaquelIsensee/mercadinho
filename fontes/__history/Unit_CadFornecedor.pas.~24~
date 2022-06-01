@@ -16,6 +16,9 @@ type
     Panel1: TPanel;
     Enviar: TSpeedButton;
     Sair: TSpeedButton;
+    Panel3: TPanel;
+    LabeledEdit1: TLabeledEdit;
+    LabeledEdit2: TLabeledEdit;
     procedure EnviarClick(Sender: TObject);
     procedure SairClick(Sender: TObject);
   private
@@ -47,7 +50,7 @@ function Tfrm_CadFornecedor.validarCampos: boolean;
 begin
   result := true;
 
-  if (edNome.Text = '') then
+  if (LabeledEdit1.Text = '') then
   begin
     result := false;
     ShowMessage('Entre com o nome!');
@@ -55,7 +58,7 @@ begin
     exit;
   end;
 
-  if (edCnpj.Text = '') then
+  if (LabeledEdit2.Text = '') then
   begin
     result := false;
     ShowMessage('Entre com o Cnpj!');
