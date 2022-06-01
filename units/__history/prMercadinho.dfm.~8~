@@ -27,10 +27,6 @@ object Form1: TForm1
         Caption = 'Produto'
         OnClick = Produto1Click
       end
-      object Genero: TMenuItem
-        Caption = 'Genero'
-        OnClick = GeneroClick
-      end
     end
   end
 end

@@ -14,10 +14,8 @@ type
     N1: TMenuItem;
     Cadastr1: TMenuItem;
     Produto1: TMenuItem;
-    Genero: TMenuItem;
     procedure Cadastr1Click(Sender: TObject);
     procedure Produto1Click(Sender: TObject);
-    procedure GeneroClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,17 +32,12 @@ uses Unit_Dados, Unit_CadFornecedor;
 
 procedure TForm1.Cadastr1Click(Sender: TObject);
 begin
-  Controle.getFornecedor;
-end;
-
-procedure TForm1.GeneroClick(Sender: TObject);
-begin
-  Controle.getGenero;
+  Controle.getFornecedor
 end;
 
 procedure TForm1.Produto1Click(Sender: TObject);
 begin
-    Controle.getProduto;
+    Controle.getProduto
 end;
 
 end.

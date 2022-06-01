@@ -34,7 +34,7 @@ uses Unit_Dados, Unit_CadFornecedor;
 
 procedure TForm1.Cadastr1Click(Sender: TObject);
 begin
-  Controle.getFornecedor;
+  Controle.getFornecedor
 end;
 
 procedure TForm1.GeneroClick(Sender: TObject);
@@ -44,7 +44,7 @@ end;
 
 procedure TForm1.Produto1Click(Sender: TObject);
 begin
-    Controle.getProduto;
+    Controle.getProduto
 end;
 
 end.
